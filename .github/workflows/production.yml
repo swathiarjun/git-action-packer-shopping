@@ -32,11 +32,11 @@ jobs:
          working-directory: ./packer/
 
       -  name: "packer validate"
-         run: packer validate -var-file="prod.pkvars.hcl" .
+         run: packer validate -var-file="prod.pkrvars.hcl" .
          working-directory: ./packer/
 
       -  name: "packer image build"
-         run: packer build -var-file="prod.pkvars.hcl" .
+         run: packer build -var-file="prod.pkrvars.hcl" .
          working-directory: ./packer/
          env: 
            AWS_ACCESS_KEY_ID: ${{ secrets.PROD_ACCESS_KEY }}
